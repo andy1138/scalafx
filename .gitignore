@@ -1,0 +1,10 @@
+
+*~
+.cache
+.hg/*
+
+*.class
+
+/target/*
+/project/target/*
+/out/*
