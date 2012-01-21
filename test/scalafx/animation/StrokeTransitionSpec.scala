@@ -60,6 +60,10 @@ import org.scalatest.FlatSpec
 import scalafx.Includes._
 import scalafx.testutil.PropertyComparator
 
+import org.scalatest.junit.JUnitRunner
+import org.junit.runner.RunWith
+
+@RunWith(classOf[JUnitRunner])
 class StrokeTransitionSpec extends FlatSpec with PropertyComparator {
   "A StrokeTransition" should "implement all the JavaFX properties" in {
     compareProperties(classOf[jfxa.StrokeTransition], classOf[StrokeTransition])

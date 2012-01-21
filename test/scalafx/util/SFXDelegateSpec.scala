@@ -31,6 +31,10 @@ import org.scalatest.FlatSpec
 import org.scalatest.matchers.ShouldMatchers._
 import scalafx.beans.property.DoubleProperty
 
+import org.scalatest.junit.JUnitRunner
+import org.junit.runner.RunWith
+
+@RunWith(classOf[JUnitRunner])
 class SFXDelegateSpec extends FlatSpec {
   val doubleProperty = new DoubleProperty(null, "double property")
   val doublePropertyWithSameName = new DoubleProperty(null, "double property")

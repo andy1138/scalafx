@@ -34,6 +34,10 @@ import scalafx.Includes._
 import scalafx.testutil.PropertyComparator
 import scalafx.beans.property._
 
+import org.scalatest.junit.JUnitRunner
+import org.junit.runner.RunWith
+
+@RunWith(classOf[JUnitRunner])
 class KeyValueSpec extends FlatSpec with PropertyComparator {
   "A KeyValue" should "implement all the JavaFX properties" in {
     compareProperties(classOf[jfxa.KeyValue], classOf[KeyValue[_, _]])

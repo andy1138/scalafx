@@ -86,6 +86,10 @@ import org.scalatest.matchers.ShouldMatchers._
 import org.scalatest.FlatSpec
 import scalafx.testutil.PropertyComparator
 
+import org.scalatest.junit.JUnitRunner
+import org.junit.runner.RunWith
+
+@RunWith(classOf[JUnitRunner])
 class PasswordFieldSpec extends FlatSpec with PropertyComparator {
 
   val sfxPassswordField: PasswordField = new PasswordField

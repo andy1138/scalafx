@@ -33,6 +33,10 @@ import scalafx.Includes._
 import scalafx.testutil.PropertyComparator
 import org.scalatest.{SeveredStackTraces, FlatSpec}
 
+import org.scalatest.junit.JUnitRunner
+import org.junit.runner.RunWith
+
+@RunWith(classOf[JUnitRunner])
 class TextSpec extends FlatSpec with PropertyComparator with SeveredStackTraces {
 
   val jfxClass = classOf[jfxs.Text]

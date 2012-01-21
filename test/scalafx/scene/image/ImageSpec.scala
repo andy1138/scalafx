@@ -33,6 +33,10 @@ import org.scalatest.FlatSpec
 import scalafx.testutil.PropertyComparator
 import scalafx.Includes._
 
+import org.scalatest.junit.JUnitRunner
+import org.junit.runner.RunWith
+
+@RunWith(classOf[JUnitRunner])
 class ImageSpec extends FlatSpec with PropertyComparator {
   "A Image" should "implement all the JavaFX properties" in {
     compareProperties(classOf[jfxsi.Image], classOf[Image])

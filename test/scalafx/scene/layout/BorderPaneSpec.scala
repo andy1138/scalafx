@@ -33,6 +33,10 @@ import org.scalatest.FlatSpec
 import scalafx.Includes._
 import scalafx.testutil.PropertyComparator
 
+import org.scalatest.junit.JUnitRunner
+import org.junit.runner.RunWith
+
+@RunWith(classOf[JUnitRunner])
 class BorderPaneSpec extends FlatSpec with PropertyComparator {
   "A BorderPane" should "implement all the JavaFX properties" in {
     compareProperties(classOf[jfxsl.BorderPane], classOf[BorderPane])

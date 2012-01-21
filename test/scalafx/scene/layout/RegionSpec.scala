@@ -32,6 +32,10 @@ import org.scalatest.FlatSpec
 import scalafx.Includes._
 import scalafx.testutil.PropertyComparator
 
+import org.scalatest.junit.JUnitRunner
+import org.junit.runner.RunWith
+
+@RunWith(classOf[JUnitRunner])
 class RegionSpec extends FlatSpec with PropertyComparator {
   "A Region" should "implement all the JavaFX properties" in {
     compareProperties(classOf[jfxsl.Region], classOf[Region])

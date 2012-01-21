@@ -35,6 +35,10 @@ import org.scalatest.{BeforeAndAfterEach, FlatSpec}
 import javafx.beans.{property => jfxbp}
 import scalafx.Includes._
 
+import org.scalatest.junit.JUnitRunner
+import org.junit.runner.RunWith
+
+@RunWith(classOf[JUnitRunner])
 class ReadOnlyObjectPropertySpec extends FlatSpec with BeforeAndAfterEach {
   val bean = new Object()
   var readOnlyObjectProperty: jfxbp.ReadOnlyObjectProperty[Paint] = null

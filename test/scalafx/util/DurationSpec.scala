@@ -32,6 +32,10 @@ import org.scalatest.FlatSpec
 import org.scalatest.matchers.ShouldMatchers._
 import scalafx.Includes._
 
+import org.scalatest.junit.JUnitRunner
+import org.junit.runner.RunWith
+
+@RunWith(classOf[JUnitRunner])
 class DurationSpec extends FlatSpec {
   "A Duration" should "be constructable from apply" in {
     Duration(500) should equal (new jfxu.Duration(500))

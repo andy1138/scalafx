@@ -33,6 +33,10 @@ import org.scalatest.FlatSpec
 import scalafx.Includes._
 import scalafx.testutil.PropertyComparator
 
+import org.scalatest.junit.JUnitRunner
+import org.junit.runner.RunWith
+
+@RunWith(classOf[JUnitRunner])
 class GroupSpec extends FlatSpec with PropertyComparator {
   "A Group" should "implement all the JavaFX properties" in {
     compareProperties(classOf[jfxs.Group], classOf[Group])

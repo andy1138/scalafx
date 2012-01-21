@@ -33,6 +33,10 @@ import org.scalatest.FlatSpec
 import scalafx.Includes._
 import scalafx.testutil.PropertyComparator
 
+import org.scalatest.junit.JUnitRunner
+import org.junit.runner.RunWith
+
+@RunWith(classOf[JUnitRunner])
 class AnimationSpec extends FlatSpec with PropertyComparator {
   "An Animation" should "implement all the JavaFX properties" in {
     compareProperties(classOf[jfxa.Animation], classOf[Animation])

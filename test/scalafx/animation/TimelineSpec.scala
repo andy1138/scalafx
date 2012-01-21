@@ -33,6 +33,10 @@ import org.scalatest.FlatSpec
 import scalafx.Includes._
 import scalafx.testutil.PropertyComparator
 
+import org.scalatest.junit.JUnitRunner
+import org.junit.runner.RunWith
+
+@RunWith(classOf[JUnitRunner])
 class TimelineSpec extends FlatSpec with PropertyComparator {
   "A Timeline" should "implement all the JavaFX properties" in {
     compareProperties(classOf[jfxa.Timeline], classOf[Timeline])

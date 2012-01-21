@@ -31,6 +31,10 @@ import org.scalatest.FlatSpec
 import org.scalatest.matchers.ShouldMatchers._
 import scalafx.collections.ObservableBuffer.{Reorder, Remove, Add}
 
+import org.scalatest.junit.JUnitRunner
+import org.junit.runner.RunWith
+
+@RunWith(classOf[JUnitRunner])
 class ObservableBufferSpec extends FlatSpec {
   "An ObservableBuffer" should "support apply" in {
     val buffer = ObservableBuffer("a", "b", "c")
