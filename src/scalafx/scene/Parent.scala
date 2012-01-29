@@ -29,11 +29,21 @@ package scalafx.scene
 
 import javafx.{scene => jfxs}
 import scalafx.util.SFXDelegate
+import scalafx.Includes._
 
 object Parent {
   implicit def sfxParent2jfx(v: Parent) = v.delegate
+//  implicit def sfxParent2jfx(v: Parent) = v.delegate
+  
+//  implicit def par2xpar( p:jfxs.Parent ) = new xParent
 }
 
-abstract class Parent(override val delegate: jfxs.Parent) extends Node(delegate) with SFXDelegate[jfxs.Parent] {
-  def needsLayout = delegate.needsLayoutProperty
+class xParent extends jfxs.Parent {
+  import scala.collection.JavaConverters._
+	def managedChildren = getManagedChildren.asInstanceOf[java.util.List[_ <: Node]].asScala.toList
+}
+
+abstract class Parent(override val delegate: jfxs.Parent ) extends Node(delegate) with SFXDelegate[jfxs.Parent] {
+//  def needsLayout = delegate.needsLayoutProperty
+//  def managedChildren = delegate.managedChildren
 }

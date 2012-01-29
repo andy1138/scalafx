@@ -15,4 +15,7 @@ trait ControlIncludes {
   implicit def jfxLabeled2sfx(l: jfxsc.Labeled) = new Labeled(l) {}
   implicit def jfxScrollPane2sfx(s: jfxsc.ScrollPane) = new ScrollPane(s) {}
   implicit def jfxTitledPane2sfx(t: jfxsc.TitledPane) = new TitledPane(t)
+  implicit def jfxSplitPane2sfx(s: jfxsc.SplitPane) = new SplitPane(s)
+//  implicit def jfxToggleGroup2sfx(s: jfxsc.ToggleGroup) = new ToggleGroup(s)
+  implicit def jfxTreeView2sfx(s: jfxsc.TreeView[Any]) = new TreeView(s)
 }

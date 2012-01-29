@@ -54,4 +54,10 @@ class TextField(override val delegate: jfxsc.TextField = new jfxsc.TextField)
     prefColumnCount() = v
   }
 
+  // TODO create/move to TextInputControl
+  def editable = delegate.isEditable
+  def editable_=(v: Boolean) {
+    delegate.setEditable(v)
+  }
+  
 }

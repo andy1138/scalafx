@@ -31,9 +31,13 @@ import javafx.scene.{layout => jfxsl}
 import scalafx.Includes._
 import scalafx.util.SFXDelegate
 import scalafx.scene.Node
+import scalafx.geometry.Insets
 
 object BorderPane {
   implicit def sfxBorderPane2jfx(v: BorderPane) = v.delegate
+  
+    def setMargin(child:Node, value:Insets) = jfxsl.BorderPane.setMargin( child, value) 
+
 }
 
 class BorderPane(override val delegate:jfxsl.BorderPane = new jfxsl.BorderPane()) extends Pane with SFXDelegate[jfxsl.BorderPane] {

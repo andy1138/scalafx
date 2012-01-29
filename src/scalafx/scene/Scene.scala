@@ -44,6 +44,8 @@ class Scene(override val delegate: jfxs.Scene = new jfxs.Scene(new jfxs.Group())
 
   def this(stackPane: jfxsl.StackPane, width: Double, height: Double) = this (new jfxs.Scene(stackPane, width, height))
 
+  def this(stackPane: jfxsl.StackPane, width: Double, height: Double, scene3d: Boolean ) = this (new jfxs.Scene(stackPane, width, height, scene3d))
+
   def root = delegate.rootProperty
 
   def root_=(v: jfxs.Parent) {

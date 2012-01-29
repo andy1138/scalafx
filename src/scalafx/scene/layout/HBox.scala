@@ -31,9 +31,20 @@ import javafx.{geometry => jfxg}
 import javafx.scene.{layout => jfxsl}
 import scalafx.Includes._
 import scalafx.util.SFXDelegate
+import scalafx.scene.Node
+import scalafx.geometry.Insets
+import javafx.scene.layout.Priority
 
 object HBox {
   implicit def sfxHBox2jfx(v: HBox) = v.delegate
+  
+  def setMargin(n:Node, insets:scalafx.geometry.Insets) {
+    jfxsl.HBox.setMargin(n, insets)
+  }
+  
+  def setHgrow( n:Node, p:Priority) {
+    jfxsl.HBox.setHgrow(n, p)
+  }
 }
 
 class HBox(override val delegate:jfxsl.HBox = new jfxsl.HBox()) extends Pane with SFXDelegate[jfxsl.HBox] {

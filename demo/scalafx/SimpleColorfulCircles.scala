@@ -76,7 +76,7 @@ object SimpleColorfulCircles extends JFXApp {
   new Timeline {
     cycleCount = INDEFINITE
     autoReverse = true
-    keyFrames = (for (circle <- circles) yield at(40 s) {
+    keyFrames = (for (circle <- circles) yield at(1 s) {
       Set (
         circle.centerX -> random * 800,
         circle.centerY -> random * 600

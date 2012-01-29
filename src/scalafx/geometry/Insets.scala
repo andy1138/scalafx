@@ -30,11 +30,13 @@ package scalafx.geometry
 import javafx.{geometry => jfxg}
 import scalafx.util.SFXDelegate
 
+import scalafx.Includes._
+
 object Insets {
   implicit def sfxInsets2jfx(i: Insets) = i.delegate
 
-  def apply(topRightBottomLeft: Int) = new jfxg.Insets(topRightBottomLeft)
-  def apply(top: Int, right: Int, bottom: Int, left: Int) = new jfxg.Insets(top, right, bottom, left)
+  def apply(topRightBottomLeft: Int) = new Insets( new jfxg.Insets(topRightBottomLeft))
+  def apply(top: Int, right: Int, bottom: Int, left: Int) = new Insets( new jfxg.Insets(top, right, bottom, left))
 }
 
 class Insets(override val delegate:jfxg.Insets) extends SFXDelegate[jfxg.Insets] {
@@ -42,4 +44,5 @@ class Insets(override val delegate:jfxg.Insets) extends SFXDelegate[jfxg.Insets]
   def right = delegate.getRight
   def bottom = delegate.getBottom
   def left = delegate.getLeft
+  
 }

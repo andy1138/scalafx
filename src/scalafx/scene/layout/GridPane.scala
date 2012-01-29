@@ -33,12 +33,22 @@ import javafx.scene.{layout => jfxsl}
 import scalafx.{scene => sfxs }
 import scalafx.Includes._
 import scalafx.util.SFXDelegate
+import javafx.geometry.HPos
+import javafx.geometry.VPos
+import javafx.scene.layout.Priority
 
 object GridPane {
   implicit def sfxGridPane2jfx(v: GridPane) = v.delegate
   // added object method (is this a good practice?)
   def setVAlignment(node: sfxs.Node, vp: jfxg.VPos) = javafx.scene.layout.GridPane.setValignment(node, vp)
   
+  def setConstraints( node: sfxs.Node, columnIndex:Int, rowIndex:Int) {
+  	javafx.scene.layout.GridPane.setConstraints(node,columnIndex, rowIndex)
+  }
+  def setConstraints( node: sfxs.Node, columnIndex:Int, rowIndex:Int, columnspan:Int, rowspan: Int, 
+       halignment:HPos, valignment:VPos, hgrow:Priority, vgrow: Priority) {
+  	jfxsl.GridPane.setConstraints(node, columnIndex, rowIndex, rowspan, columnspan, halignment, valignment, hgrow, vgrow)
+  }
 }
 
 class GridPane(override val delegate:jfxsl.GridPane = new jfxsl.GridPane()) extends Pane with SFXDelegate[jfxsl.GridPane] {

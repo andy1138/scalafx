@@ -76,8 +76,22 @@ class Region(override val delegate:jfxsl.Region = new jfxsl.Region()) extends Pa
     prefWidth() = v
   }
 
+  def maxSize = ( delegate.getMaxWidth, delegate.getMaxHeight)
+	def maxSize_=(s: (Double,Double)) {
+  	delegate.setMaxSize(s._1, s._2)
+  }
+  
+  def prefSize = ( delegate.getPrefWidth, delegate.getPrefHeight)
+  def prefSize_=( v:(Double, Double) ) {
+    delegate.setPrefSize(v._1,v._2)
+  }
+  
   def snapToPixel = delegate.snapToPixelProperty
   def snapToPixel_=(v: Boolean) {
     snapToPixel() = v
   }
+  
+  def insets = delegate.getInsets
+  
+  
 }

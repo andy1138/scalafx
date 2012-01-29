@@ -35,6 +35,8 @@ import scalafx.util.SFXDelegate
 
 object Control {
   implicit def sfxControl2jfx(v: Control) = v.delegate
+  
+  val usePrefSize = jfxsc.Control.USE_PREF_SIZE
 }
 
 abstract class Control(override val delegate: jfxsc.Control) extends Node(delegate) with SFXDelegate[jfxsc.Control] {
@@ -86,5 +88,20 @@ abstract class Control(override val delegate: jfxsc.Control) extends Node(delega
   }
 
   def width = delegate.widthProperty
+
+  def prefSize:(Double,Double) = ( delegate.getMaxWidth, delegate.getPrefHeight)
+  def prefSize_=(s:(Double, Double)) {
+  	delegate.setPrefSize(s._1,s._2)
+  }
+
+  def minSize:(Double,Double) = ( delegate.getMaxWidth, delegate.getMinHeight)
+  def minSize_=(s:(Double, Double)) {
+  	delegate.setMinSize(s._1,s._2)
+  }
+  
+  def maxSize:(Double,Double) = ( delegate.getMaxWidth, delegate.getMaxHeight)
+  def maxSize_=(s:(Double, Double)) {
+  	delegate.setMaxSize(s._1,s._2)
+  }
   
 }

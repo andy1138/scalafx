@@ -4,6 +4,8 @@
 .hg/*
 
 *.class
+*.dylib
+*.jnilib
 
 /target/*
 /project/target/*

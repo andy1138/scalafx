@@ -31,10 +31,16 @@ import collection.JavaConversions._
 import javafx.scene.{layout => jfxsl}
 import scalafx.scene.Node
 import scalafx.util.SFXDelegate
+import scalafx.geometry.Insets
+import javafx.geometry.HPos
+import javafx.geometry.VPos
+
+import scalafx.Includes._
 
 object Pane {
   implicit def sfxPane2jfx(v: Pane) = v.delegate
 }
+
 
 class Pane(override val delegate:jfxsl.Pane = new jfxsl.Pane()) extends Region with SFXDelegate[jfxsl.Pane] {
   def getChildren = delegate.getChildren
@@ -43,5 +49,28 @@ class Pane(override val delegate:jfxsl.Pane = new jfxsl.Pane()) extends Region w
   def content = getChildren
   def content_=(c: Iterable[Node]) {
     content.setAll(c.map(_.delegate))
+  }
+  
+  def layoutInArea( child:Node,
+                areaX:Double,
+                areaY:Double,
+                areaWidth:Double,
+                areaHeight:Double,
+                areaBaselineOffset:Double,
+                 margin:Insets,
+                  fillWidth:Boolean,
+                fillHeight:Boolean,
+                 halignment:HPos,
+                 valignment:VPos) {
+    delegate.layoutInArea( child,
+                 areaX,
+                 areaY,
+                 areaWidth,
+                 areaHeight,
+                 areaBaselineOffset,
+                 margin,
+                 fillWidth, fillHeight,
+                 halignment,
+                 valignment)
   }
 }

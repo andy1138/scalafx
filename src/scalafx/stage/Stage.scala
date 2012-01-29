@@ -37,8 +37,7 @@ object Stage {
   implicit def sfxStage2jfx(v: Stage) = v.delegate
 }
 
-class Stage extends SFXDelegate[jfxs.Stage] {
-  override val delegate = JFXApp.STAGE
+class Stage(override val delegate:jfxs.Stage = JFXApp.STAGE) extends SFXDelegate[jfxs.Stage] {
 
   def fullScreen = delegate.fullScreenProperty
 
@@ -69,6 +68,11 @@ class Stage extends SFXDelegate[jfxs.Stage] {
     delegate.setHeight(h)
   }
 
+  def initStyle = delegate.getStyle
+  def initStyle_=(style: jfxs.StageStyle) {
+    initStyle( style )
+  }
+  
   def showing = delegate.isShowing
   def showing_=(v: Boolean) {
     v match {
@@ -76,4 +80,25 @@ class Stage extends SFXDelegate[jfxs.Stage] {
       case false => delegate.hide()
     }
   }
+  
+  def maxWidth = delegate.getMaxWidth
+  def maxWidth_=(w: Double) {
+    delegate.setMaxWidth(w)
+  }
+
+  def maxHeight = delegate.getMaxHeight
+  def maxHeight_=(h: Double) {
+    delegate.setMaxHeight(h)
+  }
+
+  def minWidth = delegate.getMinWidth
+  def minWidth_=(w: Double) {
+    delegate.setMinWidth(w)
+  }
+
+  def minHeight = delegate.getMinHeight
+  def minHeight_=(h: Double) {
+    delegate.setMinHeight(h)
+  }
+  
 }

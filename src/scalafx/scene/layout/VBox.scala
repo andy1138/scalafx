@@ -31,9 +31,15 @@ import javafx.{geometry => jfxg}
 import javafx.scene.{layout => jfxsl}
 import scalafx.Includes._
 import scalafx.util.SFXDelegate
+import scalafx.geometry.Insets
+import scalafx.scene.Node
+import javafx.scene.layout.Priority
 
 object VBox {
   implicit def sfxVBox2jfx(v: VBox) = v.delegate
+  
+  def setMargin(child:Node, value:Insets) = jfxsl.VBox.setMargin( child, value) 
+  def setVgrow(child:Node, value:Priority) = jfxsl.VBox.setVgrow( child, value) 
 }
 
 class VBox(override val delegate:jfxsl.VBox = new jfxsl.VBox()) extends Pane with SFXDelegate[jfxsl.VBox] {

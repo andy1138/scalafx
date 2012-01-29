@@ -50,7 +50,7 @@ abstract class Labeled(override val delegate:jfxsc.Labeled) extends Control(dele
   }
 
   def graphic = delegate.graphicProperty
-  def graphic_= (v: jfxs.Node) {
+  def graphic_= (v: scalafx.scene.Node) {
     graphic() = v
   }
 
